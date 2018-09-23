@@ -25,14 +25,9 @@ class Game
   end 
       
   def won?
-     if WIN_COMBINATIONS do |combo|
+    WIN_COMBINATIONS do |combo|
         board.cells[combo[[0]] == board.cells[combo[[1]] && board.cells[combo[[1]] == board.cells[combo[[2]]
-  
-      end 
-      else 
-        !board.full?
-      end
-
+  end
   end 
 
   
