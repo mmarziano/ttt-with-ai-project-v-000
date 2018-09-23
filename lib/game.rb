@@ -26,8 +26,7 @@ class Game
       
   def won?
      if WIN_COMBINATIONS.detect do |combo|
-        combo[0] == combo[1] && combo[1] == combo[2]
-      
+        board.cells[0] == combo[1] && combo[1] == combo[2]
         combo
       end 
       else 
