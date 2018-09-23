@@ -1,11 +1,10 @@
-module Players
+class Players
+
   class Human < Player
-    
-    def move(input)
-      input = gets.chomp 
-      input
-    end
-    
-  end 
   
+    def move(input) 
+      input = gets.chomp 
+    end 
+  
+  end 
 end

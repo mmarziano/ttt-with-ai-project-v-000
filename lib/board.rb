@@ -1,52 +1,67 @@
+
+
 class Board 
-  attr_accessor :cells, :board
+  attr_accessor :cells
   
-  def initialize 
-    @cells = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+  def initialize
+    @cells = [" ", " ", " ", " ", " ", " ", " ", " "," "]
   end
   
-  def reset!
-    @cells.clear
-    @cells = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-  end
   
-  def display
+  def reset! 
+    @cells = [" ", " ", " ", " ", " ", " ", " ", " "," "]
+  end 
+  
+  def display 
     puts " #{@cells[0]} | #{@cells[1]} | #{@cells[2]} "
     puts "-----------"
     puts " #{@cells[3]} | #{@cells[4]} | #{@cells[5]} "
     puts "-----------"
     puts " #{@cells[6]} | #{@cells[7]} | #{@cells[8]} "
-  end
+  end 
   
   def position(input)
-    cells[input.to_i-1]
+    index = input.to_i - 1 
+    @cells[index]
   end 
   
-  def full?
-      @cells.all?{|position| position == "X" || position == "O"}
-  end
-
-  def turn_count
-    x = @cells.count("X") 
-    o = @cells.count("O")
-    x + o
-  end 
-
   def taken?(input)
-    position(input) == "X" || position(input) == "O"
+    index = input.to_i - 1 
+    @cells[index] == "X" || @cells [index] == "O"  
   end 
   
+  def full? 
+    @cells.all? do |char| 
+      char == "X" || char == "O"
+    end
+  end 
+    
+  def turn_count 
+    i = 0 
+    @cells.each do |count|
+      if count == "X" || count == "O"
+      i += 1
+      end 
+    end 
+    i
+  end
+    
   def valid_move?(input)
-    input.to_i.between?(1,9) && !taken?(input)
-  end
+    !taken?(input) && input.to_i.between?(1,9)
+  end 
+   
+   def update(input, player)
+     if turn_count.even?
+       char = "X"
+      else
+       char = "O"
+      end 
+    index = input.to_i - 1 
+    @cells[index] = char
+        
+   end
+   
+end
   
-  def update(input, character = "X") 
-      if input.to_i.odd?
-        character = "X" 
-      else 
-        character = "O"
-      end
-      @cells[input.to_i-1] = character
-  end
-end 
-
+  
+  
