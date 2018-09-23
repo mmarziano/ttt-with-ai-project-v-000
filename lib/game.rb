@@ -27,6 +27,9 @@ class Game
      if WIN_COMBINATIONS.detect do |combo|
         combo[0] == combo[1] && combo[1] == combo[2]
         combo
+      else 
+        board.full?
+      
       end 
  
   end 
