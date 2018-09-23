@@ -1,3 +1,4 @@
+require 'pry'
 class Game 
   attr_accessor :board, :player_1, :player_2
   
@@ -26,6 +27,7 @@ class Game
   def won?
      if WIN_COMBINATIONS.detect do |combo|
         combo[0] == combo[1] && combo[1] == combo[2]
+        binding.pry
         combo
       end 
       else 
