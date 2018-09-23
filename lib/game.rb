@@ -24,7 +24,8 @@ class Game
   end 
       
   def won?
-    board.cells.full?
+    board.cells.full? && WIN_COMBINATIONS.detect do |combo|
+        combo
   end 
 
   
