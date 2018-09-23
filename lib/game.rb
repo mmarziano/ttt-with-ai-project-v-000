@@ -29,7 +29,7 @@ class Game
         combo
       end 
       else 
-        board.full?
+        !board.full?
       end
 
   end 
