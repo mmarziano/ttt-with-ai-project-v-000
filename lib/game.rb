@@ -39,7 +39,7 @@ class Game
   end 
   
   def winner
-    win_array.to_a = WIN_COMBINATIONS.keep_if do |combo|
+    win_array = WIN_COMBINATIONS.detect do |combo|
         board.cells[combo[0]] == board.cells[combo[1]] && board.cells[combo[1]] == board.cells[combo[2]]
     end 
     board.cells[win_array[0]]
