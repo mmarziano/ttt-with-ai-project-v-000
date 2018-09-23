@@ -39,7 +39,7 @@ class Game
   end 
   
   def winner
-    if !won?
+    if draw?
       return nil 
     else 
      win_array = WIN_COMBINATIONS.detect do |combo|
