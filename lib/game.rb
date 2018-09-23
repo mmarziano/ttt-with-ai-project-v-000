@@ -42,7 +42,7 @@ class Game
     win_array.to_a = WIN_COMBINATIONS.keep_if do |combo|
         board.cells[combo[0]] == board.cells[combo[1]] && board.cells[combo[1]] == board.cells[combo[2]]
     end 
-    board.cells[win_array]
+    board.cells[win_array[0]]
   end 
   
   
