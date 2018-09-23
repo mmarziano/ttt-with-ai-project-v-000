@@ -26,7 +26,7 @@ class Game
   def won?
      if WIN_COMBINATIONS.detect do |combo|
         combo[0] == combo[1] && combo[1] == combo[2]
-        combo.to_a
+        combo
       end 
       else 
         !board.full?
