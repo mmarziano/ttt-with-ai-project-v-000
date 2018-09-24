@@ -40,7 +40,7 @@ class Game
   
   def winner
     if won?
-     board.cells[]
+     board.cells[won?[0]]
   end 
   
   
