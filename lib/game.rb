@@ -46,7 +46,7 @@ class Game
         board.cells[combo[0]] == board.cells[combo[1]] && board.cells[combo[1]] == board.cells[combo[2]]
       end 
     end 
-    board.cells[win_array[0]]
+    board.cells[win_array[0]] || nil
   end 
   
   
