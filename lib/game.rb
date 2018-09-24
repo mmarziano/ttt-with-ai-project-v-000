@@ -39,7 +39,11 @@ class Game
   end 
   
   def winner
-    board.cells[won?[0]] if won?
+    if won? 
+      board.cells[won?[0]] 
+    else !won?
+      return nil 
+    end 
   end 
   
   
