@@ -43,7 +43,7 @@ class Game
   end 
   
   def turn 
-    
+    board.valid_move?
   end 
   
 end 
