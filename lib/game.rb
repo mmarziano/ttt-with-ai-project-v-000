@@ -41,6 +41,8 @@ class Game
   def winner
     if !won?
      return nil if board.cells[won?[0]].empty?
+    else 
+      board.cells[won?[0]]
     end 
   end 
   
