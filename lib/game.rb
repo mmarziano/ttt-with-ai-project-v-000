@@ -40,8 +40,7 @@ class Game
   
   def winner
     if won?
-      binding.pry
-     board.cells[won?[0]]
+     return nil if board.cells[won?[0]].empty?
     end 
   end 
   
