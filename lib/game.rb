@@ -1,4 +1,4 @@
-
+require 'pry'
 class Game 
   attr_accessor :board, :player_1, :player_2
   
@@ -40,6 +40,7 @@ class Game
   
   def winner
     if won?
+      binding.pry
      board.cells[won?[0]]
     end 
   end 
