@@ -46,8 +46,12 @@ class Game
     end 
   end 
   
-  def turn 
+  def turn
    if  !board.valid_move?
-     
+     player.move(input)
+    else
+      board.update
+    end 
+  end
   
 end 
