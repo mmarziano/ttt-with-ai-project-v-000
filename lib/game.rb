@@ -42,8 +42,6 @@ class Game
     board.cells[won?[0]] if won?
   end 
   
-  def turn(input) 
-    board.valid_move?
-  end 
+  
   
 end 
